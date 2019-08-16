@@ -56,3 +56,7 @@ def my_friends():
 @app.route("/research")
 def do_research():
     return render_template("research.html")
+
+@app.route("/contact")
+def contact_me():
+    return render_template("contact.html")

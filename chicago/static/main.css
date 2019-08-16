@@ -3,6 +3,39 @@
     padding: 0px !important;
 }
 
-.navbar {
+.navbar-brand {
     margin: 0px !important;
+    font-family: Georgia, 'Times New Roman', Times, serif, !important;
+}
+.container {
+    font-family: Arial, sans-serif !important;
+}
+
+body {
+    background-color: lightblue;
+}
+.sticky-top {
+    /* position: fixed; */
+    /* top: 0; */
+    width: 100%;
+}
+
+.footer {
+    bottom: 0;
+    position: sticky;
+    margin: 0 auto;
+    text-align: center !important;
+    /* position: fixed; */
+    width: 100%;
+    /* left: 50%; */
+}
+
+.a:hover{
+    background-color: gray !important;
+    color: black !important;
+}
+
+.searchbox {
+    margin: 10px 10px 15px 10px;
+    background-color: lightseagreen;
 }
