@@ -17,16 +17,16 @@
             {{ form.hidden_tag() }}
             <h3>Search for the post 1909 address of a property.</h3>
             <fieldset>
-                <label for="old">Old Address</label>
-                {{ form.old_number(class="form-control")}}
+                <label for="old"> </label>
+                {{ form.old_number(class="form-control", placeholder="Old address number")}}
             </fieldset>
             <fieldset>
-                <label for="direction">Direction</label>
-                {{ form.direction(class="form-control")}}
+                <label for="direction"> </label>
+                {{ form.direction(class="form-control", placeholder="Direction")}}
             </fieldset>
             <fieldset>
-                <label for="street">Old Street name</label>
-                {{ form.street_name(class="form-control")}}
+                <label for="street"> </label>
+                {{ form.street_name(class="form-control", placeholder="Old street name")}}
             </fieldset>
             <div>
                 {{ form.submit(class = "btn btn-primary")}}
@@ -38,16 +38,16 @@
         <form action="{{ url_for('re_search')}}", methods=["POST", "GET"]>
             <h3>Search for the pre 1909 address of a property</h3>
             <fieldset>
-                <label for="new">New Address</label>
-                {{ newform.new_number(class="form-control")}}
+                <label for="new"> </label>
+                {{ newform.new_number(class="form-control", placeholder="New address number")}}
             </fieldset>
             <fieldset>
-                <label for="direction">Direction</label>
-                {{ form.direction(class="form-control")}}
+                <label for="direction"> </label>
+                {{ form.direction(class="form-control", placeholder="Direction")}}
             </fieldset>
             <fieldset>
-                <label for="street">Old Street name</label>
-                {{ newform.street_name(class="form-control")}}
+                <label for="street"> </label>
+                {{ newform.street_name(class="form-control", placeholder="New street name")}}
             </fieldset>
             <div>
                 {{ newform.submit(class = "btn btn-primary")}}

@@ -3,26 +3,20 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy(app)
 
-class Street(db.Model):
+class Address(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    new_num = db.Column(db.String)
+    new_dir = db.Column(db.String(1))
     new_street = db.Column(db.String)
+    old_num = db.Column(db.String)
     old_street = db.Column(db.String)
-    searches = db.relationship('Search', backref='Street', lazy=True)
-
-    def __init__(self, old, new):
-        self.old = old
-        self.new = new
-        
-
-class Search(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    old = db.Column(db.Integer)
-    new = db.Column(db.Integer)
-    direction = db.Column(db.String(1))
-    street_id = db.Column(db.Integer, db.ForeignKey('street.id'))
+    old_dir = db.Column(db.String(1))
 
 
-    def __init__(self, old, new, direction):
-        self.old = old
-        self.new = new
-        self.direction = direction
+    def __init__(self, new_num, new_dir, new_street, old_num, old_street, old_dir):
+        self.new_num = new_num
+        self.new_dir = new_dir
+        self.new_street = new_street
+        self.old_num = old_num
+        self.old_dir = old_dir
+        self.old_street = old_street

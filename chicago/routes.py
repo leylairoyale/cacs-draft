@@ -1,7 +1,8 @@
 from flask import render_template, redirect, url_for, request
 from chicago import app
-from chicago.models import db, Search
+from chicago.models import db, Address
 from chicago.forms import SearchOld, SearchNew, validators
+import csv
 
 @app.route("/")
 def go_home():
@@ -13,37 +14,20 @@ def go_home():
 def go_search():
     form = SearchOld()
     newform = SearchNew()
-    # if request.method == "POST":
-    #     return search_results(form)
-   #newnum = Search.query.get(new)
-    #newstreet = Search.query.get(street_id)
-    address = Search.query.all()
-    print(address)
-    #print(newnum)
-    #print(newstreet)
+    with open('chicago\cacs_carmen_ave.csv', newline='') as csvfile:
+        reading = csv.DictReader(csvfile)
+        for row in reading:
+            print(row['new_num'], row['old_num'])
+            break
     return render_template("index.html", form = form, newform=newform)
 
-# @app.route("/results")
-# def search_results(form):
-#     results = []
-#     #search_string = form.data['search']
-#     if form.data['search'] == '':
-#         queer = db.session.query(new)
-#         results = queer.all()
-#     if not results:
-#         flash('Nothing found :(')
-#         return render_template("index.html", form=form, newform = newform)
-#     else:
-#         return render_template('results.html', results=results) 
 
 @app.route("/searchnew", methods=["GET", "POST"])
 def re_search():
     form = SearchOld()
-    newform = SearchNew()
-    if form.validate_on_submit():
-        address = Search.query.get(id)
-        print(address)
     return render_template("index.html", form=form, newform = newform)
+
+# other pages sans database stuff
 
 @app.route("/about")
 def about_me():
