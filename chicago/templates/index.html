@@ -13,7 +13,8 @@
   <div class="container">
     <div class="row">
       <div class="col searchbox">
-        <form action="{{ url_for('go_search')}}", methods=["POST", "GET"]>
+        <!-- method and methods are different, and only what you need should be posted. -->
+        <form action="{{ url_for('go_search')}}", method="POST">
             {{ form.hidden_tag() }}
             <h3>Search for the post 1909 address of a property.</h3>
             <fieldset>
@@ -35,7 +36,7 @@
       </div>
       <div class="col searchbox">
           <!-- New to Old address search -->
-        <form action="{{ url_for('re_search')}}", methods=["POST", "GET"]>
+        <form action="{{ url_for('re_search')}}", method="POST">
             <h3>Search for the pre 1909 address of a property</h3>
             <fieldset>
                 <label for="new"> </label>

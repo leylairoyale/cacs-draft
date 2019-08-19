@@ -44,3 +44,9 @@ body {
 .fieldset {
     padding: 5px !important;
 }
+
+/* css for not found */
+/* left off trying to put this in back of jumbotron */
+.notfoundjumbo {
+    background-image: url("https://bit.ly/2NfLtk4") !important;
+}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid notfoundjumbo">
+    <div class="container">
+      <h1 class="display-4">Can't find you address?</h1>
+      <p class="lead">Historical research can be tricky, but there are a few things you can do to help find what you're looking for.
+    </div>
+  </div>]
+
+<div class="container">
+    <div class="card researchcard">
+        <img src="https://bit.ly/2NfLtk4" class="card-img-top greystone" alt="A Chicago greystone against a blue sky">
+        <div class="card-body">
+          <p class="card-text">
+              <h2>If you can't find your addresss...</h2>
+              <ul>
+                    <li><strong>Your address might not exist!</strong> Not all addresses in Chicago existed before 1909, some may have been mis-recorded, and some just frustratingly seem like they don't exist.</li>
+                    <li><strong>The street name might have changed.</strong> Streets have been renamed for various reasons throughout the years, so you might be looking for one that doesn't exist anymore. (Fun fact: there was once a Fake Street in Chicago, but it was renamed after residents complained no one believed that they lived on Fake Street!)</li>
+                    <li><strong>Is it misspelled?</strong> It's not uncommon to find multiple ways to spell things, especially when you go back 100+ years. Check for multiple spellings of the same place.</li>
+                    <li><strong>Check for variations.</strong>If you're looking for the old address of, say, 800 W Belmont, look for 800 Belmont, 800 Wear Belmont, etc.</li>
+                </ul>
+          </p>
+        </div>
+      </div>
+</div>
+
+{% endblock content %}
