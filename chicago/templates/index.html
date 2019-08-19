@@ -42,6 +42,16 @@
             <div>
                 {{ form.submit(class = "btn btn-primary")}}
             </div>
+            <!-- testing to return results -->
+            <div>
+              {% if question %}
+                {{ question.new_num }}
+                {{ question.new_dir }}
+                {{ question.new_street }}
+                {{ question.duplicate }}
+              {% endif %}
+            </div>
+            <!-- end results testing -->
         </form>
       </div>
       <div class="col searchbox">

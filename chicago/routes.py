@@ -27,6 +27,7 @@ def go_home():
 def go_search():
     form = SearchOld()
     newform = SearchNew()
+    results = []
     #below is the error, somehow
     # oldnum = SearchOld(old_num=request.form.get("old_num"))
     #other thing above was querying the database too early.
@@ -41,9 +42,13 @@ def go_search():
             return redirect('/')
         else:
             print(question.new_num, question.new_dir, question.new_street, question.duplicate)
-            return search_results(question)
+            results.append(question)
+            return render_template("index.html", question=question, form=form, newform=newform)
     return render_template("index.html", form = form, newform=newform)
 
+# @app.route("/results", methods=["GET", "POST"])
+#     def results():
+#         return render_template("results.html", results=results)
 
 
     # if form.old_number.data:
@@ -78,7 +83,6 @@ def go_search():
 #             print(test.new_num)
 
 #     return render_template("index.html", form = form, newform=newform)
-
 
 @app.route("/searchnew", methods=["GET", "POST"])
 def re_search():
