@@ -13,6 +13,16 @@
   <div class="container">
     <div class="row">
       <div class="col searchbox">
+        <!-- below is the flash jinja -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+              {% for message in messages %}
+                {{ message}} 
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
         <!-- method and methods are different, and only what you need should be posted. -->
         <form action="{{ url_for('go_search')}}", method="POST">
             {{ form.hidden_tag() }}

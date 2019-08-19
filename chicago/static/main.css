@@ -45,6 +45,13 @@ body {
     padding: 5px !important;
 }
 
+.flashes {
+    font-size: 30px;
+    padding: 10px 0px 0px 0px;
+    color: rgb(255, 255, 255);
+    background-color: darkslategrey;
+}
+
 /* css for not found */
 /* left off trying to put this in back of jumbotron */
 .notfoundjumbo {
