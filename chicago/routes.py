@@ -19,10 +19,7 @@ def go_home():
     #         db.session.commit()
     return render_template("index.html", form=form, newform = newform)
 
-
-
-
-# below is ACCURATE for getting direction, street, num in search.
+# below is ACCURATE for getting current/new direction, street, num in search.
 @app.route("/searchold", methods=["GET", "POST"])
 def go_search():
     form = SearchOld()
@@ -44,6 +41,26 @@ def go_search():
             print(question.new_num, question.new_dir, question.new_street, question.duplicate)
             results.append(question)
             return render_template("index.html", question=question, form=form, newform=newform)
+    return render_template("index.html", form = form, newform=newform)
+
+# searching for old address from the new one
+@app.route("/searchnew", methods=["GET", "POST"])
+def re_search():
+    form = SearchOld()
+    newform = SearchNew()
+    results = []
+    if newform.data:
+        newnum = newform.new_number.data
+        newstreet = newform.street_name.data 
+        newdir = newform.direction.data
+        newquestion = Address.query.filter_by(new_num = str(newnum), new_street=str(newstreet), new_dir =str(newdir)).first()
+        if not newquestion:
+            flash("Hmm, we can't find the pre 1909 address...")
+            return redirect('/')
+        else:
+            print(newquestion.old_num, newquestion.old_dir, newquestion.old_street, newquestion.duplicate)
+            results.append(newquestion)
+            return render_template("index.html", newquestion=newquestion, form=form, newform=newform)
     return render_template("index.html", form = form, newform=newform)
 
 # @app.route("/results", methods=["GET", "POST"])
@@ -84,11 +101,11 @@ def go_search():
 
 #     return render_template("index.html", form = form, newform=newform)
 
-@app.route("/searchnew", methods=["GET", "POST"])
-def re_search():
-    form = SearchOld()
-    newform = SearchNew()
-    return render_template("index.html", form=form, newform = newform)
+# @app.route("/searchnew", methods=["GET", "POST"])
+# def re_search():
+#     form = SearchOld()
+#     newform = SearchNew()
+#     return render_template("index.html", form=form, newform = newform)
 
 # other pages sans database stuff
 

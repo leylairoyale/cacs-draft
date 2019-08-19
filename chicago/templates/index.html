@@ -42,16 +42,17 @@
             <div>
                 {{ form.submit(class = "btn btn-primary")}}
             </div>
-            <!-- testing to return results -->
-            <div>
+            <!-- jinja to return results -->
+            <div class="results">
               {% if question %}
+                <h4>Here's the post 1909 address:</h4>
                 {{ question.new_num }}
-                {{ question.new_dir }}
-                {{ question.new_street }}
-                {{ question.duplicate }}
+                {{ question.new_dir}}
+                {{ question.new_street}}
+                {{ question.duplicate}}
               {% endif %}
             </div>
-            <!-- end results testing -->
+            <!-- end results jinja -->
         </form>
       </div>
       <div class="col searchbox">
@@ -64,7 +65,7 @@
             </fieldset>
             <fieldset>
                 <label for="direction"> </label>
-                {{ form.direction(class="form-control", placeholder="Direction")}}
+                {{ newform.direction(class="form-control", placeholder="Direction")}}
             </fieldset>
             <fieldset>
                 <label for="street"> </label>
@@ -73,6 +74,17 @@
             <div>
                 {{ newform.submit(class = "btn btn-primary")}}
             </div>
+            <!-- jinja to return results -->
+            <div class="results">
+                {% if newquestion %}
+                  <h4>Here's the pre 1909 address:</h4>
+                  {{ newquestion.old_num }}
+                  {{ newquestion.old_dir}}
+                  {{ newquestion.old_street}}
+                  {{ newquestion.duplicate}}
+                {% endif %}
+              </div>
+              <!-- end results jinja -->
         </form>
       </div>
       <!-- <div class="w-100"></div>
