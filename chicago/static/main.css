@@ -12,8 +12,19 @@
 }
 
 body {
-    background-color: lightblue;
+    animation: colorchange 10s infinite; 
+    -webkit-animation: colorchange 90s infinite;
 }
+
+@keyframes colorchange
+  {
+    0%   {background: #C6E1E8;}
+    25%  {background: #9FACE6;}
+    50%  {background: #0093E9;}
+    75%  {background: #784BA0;}
+    100% {background: #80D0C7;}
+  }
+
 .sticky-top {
     /* position: fixed; */
     /* top: 0; */
@@ -39,7 +50,7 @@ body {
     margin: 10px 10px 15px 10px;
     padding: 5px;
     text-align: center;
-    background-color: lightseagreen;
+    background-color: #C6E1E8;
 }
 .fieldset {
     padding: 5px !important;
@@ -48,20 +59,100 @@ body {
 .flashes {
     font-size: 30px;
     padding: 10px 0px 0px 0px;
-    color: rgb(255, 255, 255);
-    background-color: darkslategrey;
+    color: #ddeeff;
+    background-color:  #668877;
 }
 
 .results {
     font-size: 30px;
     padding: 10px 0px 0px 0px;
-    color: rgb(255, 255, 255);
-    background-color: darkslategrey;
+}
 
+.more{
+    text-align: center;
+}
+
+.btn {
+    background-color: #6d6d44;
+background-image: linear-gradient(147deg, #6d6d44 0%, #000000 74%);
+    border: black !important;
+}
+
+.jumtop{
+    background-color: #C6E1E8
+    /* background-color: #A9C9FF;
+    background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
+ */
+}
+.jumbottom {
+    position: relative;
+    background-color: #C6E1E8
+    /* background-color: #A9C9FF;
+    background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%); */
 }
 
 /* css for not found */
 /* left off trying to put this in back of jumbotron */
 .notfoundjumbo {
-    background-image: url("https://bit.ly/2NfLtk4") !important;
+    /* background-image: url("https://bit.ly/2Z4Qd31") !important; */
+    /* background-image: url("https://bit.ly/2Mst1oK"); */
+    background-color: #C6E1E8;
+    text-align: center;
+}
+
+/* do more research */
+.researchbox {
+    margin: 20px;
+}
+
+.card {
+    margin: 20px;
+}
+
+.jumbosearch {
+    background-color: #C6E1E8;
+}
+
+.sanborn {
+    background-color: #C6E1E8;
+}
+
+.trib {
+    background-color: #C6E1E8;
+}
+.trib img{
+    height: 50%;
+}
+
+.chm {
+    background-color: #C6E1E8;
+}
+
+/* about */
+
+.jumboabout {
+    background-color: #C6E1E8;
+    text-align: center;
+}
+
+.aboutcacs {
+    background-color: #C6E1E8;
+    margin: 5px;
+}
+
+.abouttext {
+    padding: 5px;
+    font-family: Helvetica;
+}
+
+/* contact */
+
+.jumbocontact {
+    background-color: #C6E1E8;
+    text-align: center;
+}
+
+.contact {
+    background-color: #C6E1E8;
+    text-align: center;
 }

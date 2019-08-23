@@ -30,9 +30,9 @@ def go_search():
     #other thing above was querying the database too early.
     #below you have to add .data to get what was actually in the form
     if form.data:
-        oldnum = form.old_number.data
-        oldstreet = form.street_name.data 
-        olddir = form.direction.data
+        oldnum = form.old_number.data.strip()
+        oldstreet = form.street_name.data.strip().title() 
+        olddir = form.direction.data.strip().lower()
         question = Address.query.filter_by(old_num = str(oldnum), old_street=str(oldstreet), old_dir =str(olddir)).first()
         if not question:
             flash("Hmm, we don't have that address...")
@@ -50,9 +50,9 @@ def re_search():
     newform = SearchNew()
     results = []
     if newform.data:
-        newnum = newform.new_number.data
-        newstreet = newform.street_name.data 
-        newdir = newform.direction.data
+        newnum = newform.new_number.data.strip()
+        newstreet = newform.street_name.data.strip().title()
+        newdir = newform.direction.data.strip()
         newquestion = Address.query.filter_by(new_num = str(newnum), new_street=str(newstreet), new_dir =str(newdir)).first()
         if not newquestion:
             flash("Hmm, we can't find the pre 1909 address...")
