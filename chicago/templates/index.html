@@ -2,10 +2,11 @@
 
 {% block content %}
 <div class="jumbotron jumbotron-fluid jumtop">
-  <div class="container">
+  <div class="container learnyourpast">
     <h1 class="display-4">Learn your past</h1>
     <p class="lead">This site is available to all as a tool to help research the history of a building. You can use it to find the pre 1909 address of a place in Chicago.</p>
     <p>Before 1909, the address in Chicago made little sense. They weren't properly organized, and it wasn't until 1909 that the city finally rewrote them into a grid system, starting with the 0/0 point at State and Madison in the Loop. While it makes naviagting the city today much easier, it makes it more difficult for researchers as you must look up the pre 1909 address if you want data from before that year. With this site (still very much a work in progress), instead of hunting through old books you can simply enter the old (or new!) address to get its corresponding pair. While useful, please note that not every address in the city has a pre 1909 address. You might also need to change the street name to its 1909 equivalent, a feature that we'll be working on for this site.</p>
+    <br>
   </div>
 </div>
 
@@ -95,12 +96,15 @@
     </div>
   </div>
   <div class="jumbotron jumbotron-fluid jumbottom">
-      <div class="container">
-        <h1 class="display-4 more">Need more information?</h1>
+      <div class="container more">
+        <h1 class="display-4">Need more information?</h1>
         <br>
-        <p class="lead more">
+        <p class="lead">
             <a href="{{url_for("do_research") }}" class="btn btn-primary stretched-link">Click here to find resources to help you with your historical research.</a>
+        </p>
+        </br>
       </div>
+      <br>
     </div>
   
 

@@ -1,3 +1,21 @@
+.headerlogo {
+    background-image: url('http://bit.ly/2lwaKe5');
+    /* background-image: url('http://bit.ly/2lvWstN'); */
+    /* background-size: auto 100%;  */
+    /* background-repeat: no-repeat; */
+    background-attachment: cover;
+    /* opacity: .8; */
+    /* transform: translate(50px, 100px); */
+}
+
+.logobackcolor {
+    background-color: rgba(31,35,32,.2);
+}
+
+.headerimage {
+    transform: translate(50, 50);
+}
+
 .main {
     margin: 0px 0px 0px 0px !important;
     padding: 0px !important;
@@ -7,13 +25,24 @@
     margin: 0px !important;
     font-family: Georgia, 'Times New Roman', Times, serif, !important;
 }
+
+.topleft {
+    float: right !important;
+}
+
 .container {
-    font-family: Arial, sans-serif !important;
+    font-family: rockwell, sans-serif !important;
+    font-style: normal !important;
+    font-weight: 300 !important;
 }
 
 body {
     animation: colorchange 10s infinite; 
     -webkit-animation: colorchange 90s infinite;
+
+    font-family: rockwell, sans-serif !important;
+    font-style: normal !important;
+    font-weight: 300 !important;
 }
 
 @keyframes colorchange
@@ -39,6 +68,7 @@ body {
     /* position: fixed; */
     width: 100%;
     /* left: 50%; */
+    left: 50%;
 }
 
 .a:hover{
@@ -50,7 +80,7 @@ body {
     margin: 10px 10px 15px 10px;
     padding: 5px;
     text-align: center;
-    background-color: #C6E1E8;
+    background: rgba(236, 192, 164, .8);
 }
 .fieldset {
     padding: 5px !important;
@@ -70,34 +100,42 @@ body {
 
 .more{
     text-align: center;
+    background: rgba(236, 192, 164, .8);
 }
 
 .btn {
-    background-color: #6d6d44;
-background-image: linear-gradient(147deg, #6d6d44 0%, #000000 74%);
+    background-color: rgb(31, 35, 32);
     border: black !important;
+    color: white;
+}
+
+.btn-primary :hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+    background-color: black !important;
 }
 
 .jumtop{
-    background-color: #C6E1E8
+    background-image: url('http://bit.ly/2lSEdik');
+    background-attachment: cover;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    /* background-color: #C6E1E8 */
     /* background-color: #A9C9FF;
     background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
  */
 }
+
+.learnyourpast {
+    background: rgba(236, 192, 164, .8);
+    text-align: center;
+}
 .jumbottom {
     position: relative;
-    background-color: #C6E1E8
+    background-color: rgba(119, 170, 182, .5)
+    padding: 10px;
+    margin: 10px;
     /* background-color: #A9C9FF;
     background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%); */
-}
-
-/* css for not found */
-/* left off trying to put this in back of jumbotron */
-.notfoundjumbo {
-    /* background-image: url("https://bit.ly/2Z4Qd31") !important; */
-    /* background-image: url("https://bit.ly/2Mst1oK"); */
-    background-color: #C6E1E8;
-    text-align: center;
 }
 
 /* do more research */
@@ -107,52 +145,95 @@ background-image: linear-gradient(147deg, #6d6d44 0%, #000000 74%);
 
 .card {
     margin: 20px;
+    text-align: center;
 }
 
 .jumbosearch {
-    background-color: #C6E1E8;
+    background-image: url('http://bit.ly/2jYfuIS');
+    text-align: center;
+    background-attachment: cover;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.jumbosearchtext {
+    background-color: rgba(236, 192, 164, .8);
+
 }
 
 .sanborn {
-    background-color: #C6E1E8;
+    background-color: rgba(236, 192, 164, .8);
 }
 
 .trib {
-    background-color: #C6E1E8;
+    background-color: rgba(236, 192, 164, .8);
 }
 .trib img{
     height: 50%;
 }
 
 .chm {
-    background-color: #C6E1E8;
+    background-color: rgba(236, 192, 164, .8);
 }
 
 /* about */
 
 .jumboabout {
-    background-color: #C6E1E8;
+    background-image: url('http://bit.ly/2lsZKhr');
     text-align: center;
+    background-attachment: cover;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.jumboabouttext{
+    background-color: rgba(236, 192, 164, .8);
+}
+
+.aboutimage{
+    position: justify;
 }
 
 .aboutcacs {
-    background-color: #C6E1E8;
+    /* background-color: rgba(236, 192, 164, .8); */
     margin: 5px;
+    text-align: center;
 }
 
 .abouttext {
     padding: 5px;
-    font-family: Helvetica;
+    
 }
 
 /* contact */
 
 .jumbocontact {
-    background-color: #C6E1E8;
+    background-color: rgba(119, 170, 182, .5);
     text-align: center;
 }
 
 .contact {
-    background-color: #C6E1E8;
+    background-color: rgba(119, 170, 182, .5);
     text-align: center;
+}
+
+/* not found */
+
+.researchcard {
+    background: rgba(236, 192, 164, .8);
+}
+
+.notfoundjumbo {
+    /* background-image: url("https://bit.ly/2Mst1oK"); */
+    /* background-image: url('http://bit.ly/2lxGyPB'); */
+    background-attachment: cover;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url('http://bit.ly/2lCrUGH');
+    /* background-color: rgba(119, 170, 182, .5); */
+    text-align: center;
+}
+
+.notfoundcontainer {
+    background: rgba(236, 192, 164, .8);
+    
 }
