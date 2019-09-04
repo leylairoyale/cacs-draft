@@ -1,1 +1,1 @@
-web: gunicorn cacs run:app --preload
+web: gunicorn chicago run:app --preload
