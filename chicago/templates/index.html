@@ -14,7 +14,7 @@
   <div class="container">
     <div class="row">
       <div class="col searchbox">
-        <!-- below is the flash jinja -->
+        <!-- below is the flash jinja
         {% with messages = get_flashed_messages() %}
           {% if messages %}
             <ul class=flashes>
@@ -23,7 +23,7 @@
               {% endfor %}
             </ul>
           {% endif %}
-        {% endwith %}
+        {% endwith %} -->
         <!-- method and methods are different, and only what you need should be posted. -->
         <form action="{{ url_for('go_search')}}", method="POST">
             {{ form.hidden_tag() }}
@@ -90,14 +90,25 @@
               <!-- end results jinja -->
         </form>
       </div>
-      <!-- <div class="w-100"></div>
-      <div class="col">Column</div>
-      <div class="col">Column</div> -->
+      <div class="w-100"></div>
+      <div class="col">
+      <!-- below is the flash jinja -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+              {% for message in messages %}
+                {{ message}} 
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+      </div>
+      <!-- <div class="col">Column</div> -->
     </div>
   </div>
   <div class="jumbotron jumbotron-fluid jumbottom">
-      <div class="container more">
-        <h1 class="display-4">Need more information?</h1>
+      <div class="container">
+        <h1 class="display-4 more">Need more information?</h1>
         <br>
         <p class="lead">
             <a href="{{url_for("do_research") }}" class="btn btn-primary stretched-link">Click here to find resources to help you with your historical research.</a>

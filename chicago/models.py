@@ -8,10 +8,10 @@ class Address(db.Model):
     __tablename__ = 'Address'
     id = db.Column(db.Integer, primary_key=True)
     new_num = db.Column(db.String)
-    new_dir = db.Column(db.String(1))
+    new_dir = db.Column(db.String(10))
     new_street = db.Column(db.String)
     old_num = db.Column(db.String)
-    old_dir = db.Column(db.String(1))
+    old_dir = db.Column(db.String(10))
     old_street = db.Column(db.String)
     duplicate = db.Column(db.String)
 

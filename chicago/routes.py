@@ -10,8 +10,8 @@ from io import TextIOWrapper
 def go_home():
     form = SearchOld()
     newform = SearchNew()
-#below opens a csv file and adds it row by row to the db
-    # with open('chicago\cacs_carmen_ave.csv', newline='') as csvfile:
+# below opens a csv file and adds it row by row to the db
+    # with open('chicago\master_cacs_data_2019_9_4.csv', newline='') as csvfile:
     #     reading = csv.reader(csvfile)
     #     for row in reading:
     #         addy = Address(new_num=row[0], new_dir=row[1], new_street=row[2], old_num=row[3], old_dir=row[4], old_street=row[5], duplicate=row[6])
@@ -35,7 +35,7 @@ def go_search():
         olddir = form.direction.data.strip().lower()
         question = Address.query.filter_by(old_num = str(oldnum), old_street=str(oldstreet), old_dir =str(olddir)).first()
         if not question:
-            flash("Hmm, we don't have that address...")
+            flash("Hmm, we can't find the post 1909 address...")
             return redirect('/')
         else:
             print(question.new_num, question.new_dir, question.new_street, question.duplicate)

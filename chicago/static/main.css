@@ -16,6 +16,7 @@
 
 .logobackcolor {
     background-color: rgba(31,35,32,.2);
+    border-radius: 50px;
 }
 
 .headerimage {
@@ -53,11 +54,11 @@ body {
 
 @keyframes colorchange
   {
-    0%   {background: #C6E1E8;}
-    25%  {background: #9FACE6;}
-    50%  {background: #0093E9;}
-    75%  {background: #784BA0;}
-    100% {background: #80D0C7;}
+    0%   {background: rgba(198, 225, 232, .7);}
+    25%  {background: rgba(203,228, 234, .8);}
+    50%  {background: rgba(119, 170, 182, 1);}
+    75%  {background: rgba(203,228, 234, .8);}
+    100% {background: rgba(203,228, 234, .7);}
   }
 
 .sticky-top {
@@ -77,8 +78,8 @@ body {
     left: 50%;
 }
 
-.a:hover{
-    background-color: gray !important;
+.btn:hover{
+    background-color: rgba(119, 170, 182, 1);
     color: black !important;
 }
 
@@ -94,9 +95,10 @@ body {
 
 .flashes {
     font-size: 30px;
-    padding: 10px 0px 0px 0px;
-    color: #ddeeff;
-    background-color:  #668877;
+    padding: 10px 0px 10px 0px;
+    color: black;
+    background-color: rgba(119, 170, 182, .5);
+    text-align: center;
 }
 
 .results {
@@ -137,7 +139,11 @@ body {
 }
 .jumbottom {
     position: relative;
-    background-color: rgba(119, 170, 182, .5)
+    text-align: center;
+    background-image: url('http://bit.ly/2lX8Inj');
+    background-attachment: cover;
+    background-repeat: no-repeat;
+    background-size: 100%;
     padding: 10px;
     margin: 10px;
     /* background-color: #A9C9FF;
@@ -155,7 +161,7 @@ body {
 }
 
 .jumbosearch {
-    background-image: url('http://bit.ly/2jYfuIS');
+    background-image: url('http://bit.ly/2krVGxG');
     text-align: center;
     background-attachment: cover;
     background-repeat: no-repeat;
@@ -185,12 +191,13 @@ body {
 /* about */
 
 .jumboabout {
-    background-image: url('http://bit.ly/2lsZKhr');
+    background-image: url('http://bit.ly/2krVGxG');
     text-align: center;
     background-attachment: cover;
     background-repeat: no-repeat;
     background-size: 100%;
 }
+
 .jumboabouttext{
     background-color: rgba(236, 192, 164, .8);
 }
@@ -212,14 +219,36 @@ body {
 
 /* contact */
 
+
 .jumbocontact {
-    background-color: rgba(119, 170, 182, .5);
+    background-image: url('http://bit.ly/2kttrPk');
     text-align: center;
+    background-attachment: cover;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .contact {
-    background-color: rgba(119, 170, 182, .5);
+    background-color: rgba(236, 192, 164, .8);
     text-align: center;
+}
+
+.contact a{
+    text-decoration: none;
+    color: rgb(119, 170, 182)
+    background-color: rgba(236, 192, 164, 1)
+}
+
+.contact a:hover{
+    background-color: rgb(119, 170, 182);
+    color: rgb(31, 35, 32)
+}
+
+.leylaphoto {
+    border-radius: 1000px;
+    height: 300px;
+    width: 300px;
+    margin: 0 auto;
 }
 
 /* not found */
@@ -242,4 +271,14 @@ body {
 .notfoundcontainer {
     background: rgba(236, 192, 164, .8);
     
+}
+
+/* friends page */
+
+.jumbofriends {
+    background-image: url('http://bit.ly/2kttrPk');
+    text-align: center;
+    background-attachment: cover;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
