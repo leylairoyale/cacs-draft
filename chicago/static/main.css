@@ -1,3 +1,9 @@
+/*Center Header Image*/
+.center-image{
+    display: block;
+    margin: 0 auto;
+}
+
 .headerlogo {
     background-image: url('http://bit.ly/2lwaKe5');
     /* background-image: url('http://bit.ly/2lvWstN'); */
