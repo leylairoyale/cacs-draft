@@ -37,7 +37,7 @@ def go_search():
         oldstreettype = form.old_street_type.data
         question = Address.query.filter_by(old_num = str(oldnum), old_street=str(oldstreet), old_dir =str(olddir), old_street_type=str(oldstreettype)).first()
         if not question:
-            flash("Hmm, we can't find the post 1909 address...")
+            flash("Hmm, we can't find the post 1909 address. The old address might not exist today, it might have been misrecorded, or there might be another issue with the existing data on which the site is based.")
             return redirect('/')
         else:
             print(question.new_num, question.new_dir, question.new_street, question.new_street_type, question.duplicate)
@@ -58,7 +58,7 @@ def re_search():
         newstreettype = newform.new_street_type.data
         newquestion = Address.query.filter_by(new_num = str(newnum), new_street=str(newstreet), new_dir =str(newdir), new_street_type=str(newstreettype)).first()
         if not newquestion:
-            flash("Hmm, we can't find the pre 1909 address...")
+            flash("Hmm, we can't find the pre 1909 address. The current address might not have existed in 1909, it might have been misrecorded, or there might be another issue with the existing data on which the site is based.")
             return redirect('/')
         else:
             print(newquestion.old_num, newquestion.old_dir, newquestion.old_street, newquestion.old_street_type, newquestion.duplicate)
