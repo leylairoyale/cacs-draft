@@ -11,10 +11,10 @@ def go_home():
     form = SearchOld()
     newform = SearchNew()
 # below opens a csv file and adds it row by row to the db
-    # with open('chicago\master_cacs_data_2019_9_4.csv', newline='') as csvfile:
+    # with open('chicago\master_cacs_data_2019_9_5.csv', newline='') as csvfile:
     #     reading = csv.reader(csvfile)
     #     for row in reading:
-    #         addy = Address(new_num=row[0], new_dir=row[1], new_street=row[2], old_num=row[3], old_dir=row[4], old_street=row[5], duplicate=row[6])
+    #         addy = Address(new_num=row[0], new_dir=row[1], new_street=row[2], new_street_type=row[3], old_num=row[4], old_dir=row[5], old_street=row[6], old_street_type=row[7], duplicate=row[8])
     #         db.session.add(addy)
     #         db.session.commit()
     return render_template("index.html", form=form, newform = newform)
@@ -30,16 +30,17 @@ def go_search():
     #other thing above was querying the database too early.
     #below you have to add .data to get what was actually in the form
     if form.data:
-        direction = ["n", "s", "e", "w"]
+        # direction = ["n", "s", "e", "w"]
         oldnum = form.old_number.data.strip()
         oldstreet = form.street_name.data.strip().title() 
         olddir = form.direction.data.strip().lower()
-        question = Address.query.filter_by(old_num = str(oldnum), old_street=str(oldstreet), old_dir =str(olddir)).first()
+        oldstreettype = form.old_street_type.data
+        question = Address.query.filter_by(old_num = str(oldnum), old_street=str(oldstreet), old_dir =str(olddir), old_street_type=str(oldstreettype)).first()
         if not question:
             flash("Hmm, we can't find the post 1909 address...")
             return redirect('/')
         else:
-            print(question.new_num, question.new_dir, question.new_street, question.duplicate)
+            print(question.new_num, question.new_dir, question.new_street, question.new_street_type, question.duplicate)
             results.append(question)
             return render_template("index.html", question=question, form=form, newform=newform)
     return render_template("index.html", form = form, newform=newform)
@@ -54,12 +55,13 @@ def re_search():
         newnum = newform.new_number.data.strip()
         newstreet = newform.street_name.data.strip().title()
         newdir = newform.direction.data.strip()
-        newquestion = Address.query.filter_by(new_num = str(newnum), new_street=str(newstreet), new_dir =str(newdir)).first()
+        newstreettype = newform.new_street_type.data
+        newquestion = Address.query.filter_by(new_num = str(newnum), new_street=str(newstreet), new_dir =str(newdir), new_street_type=str(newstreettype)).first()
         if not newquestion:
             flash("Hmm, we can't find the pre 1909 address...")
             return redirect('/')
         else:
-            print(newquestion.old_num, newquestion.old_dir, newquestion.old_street, newquestion.duplicate)
+            print(newquestion.old_num, newquestion.old_dir, newquestion.old_street, newquestion.old_street_type, newquestion.duplicate)
             results.append(newquestion)
             return render_template("index.html", newquestion=newquestion, form=form, newform=newform)
     return render_template("index.html", form = form, newform=newform)

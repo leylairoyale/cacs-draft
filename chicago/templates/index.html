@@ -50,7 +50,7 @@
             </fieldset>
             <fieldset>
               <label for="street_type"></label>
-                {{form.street_type(class="form-control", placeholder="Street Type")}}
+                {{form.old_street_type(class="form-control", placeholder="Old Street Type")}}
             </fieldset>
             <br>
             <div>
@@ -63,6 +63,7 @@
                 {{ question.new_num }}
                 {{ question.new_dir}}
                 {{ question.new_street}}
+                {{ question.new_street_type}}
                 {{ question.duplicate}}
               {% endif %}
             </div>
@@ -93,8 +94,8 @@
                 {{ newform.street_name(class="form-control", placeholder="New street name")}}
             </fieldset>
             <fieldset>
-              <label for="street_type"></label>
-                {{form.street_type(class="form-control", placeholder="Street Type")}}
+              <label for="new_street_type"></label>
+                {{newform.new_street_type(class="form-control", placeholder="New Street Type")}}
             </fieldset>
             <br>
             <div>
@@ -107,6 +108,7 @@
                   {{ newquestion.old_num }}
                   {{ newquestion.old_dir}}
                   {{ newquestion.old_street}}
+                  {{ newquestion.old_street_type}}
                   {{ newquestion.duplicate}}
                 {% endif %}
               </div>
