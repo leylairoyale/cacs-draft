@@ -30,6 +30,7 @@ def go_search():
     #other thing above was querying the database too early.
     #below you have to add .data to get what was actually in the form
     if form.data:
+        direction = ["n", "s", "e", "w"]
         oldnum = form.old_number.data.strip()
         oldstreet = form.street_name.data.strip().title() 
         olddir = form.direction.data.strip().lower()

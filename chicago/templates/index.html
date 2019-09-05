@@ -30,15 +30,27 @@
             <h3>Search for the post 1909 address of a property.</h3>
             <fieldset>
                 <label for="old"> </label>
-                {{ form.old_number(class="form-control", placeholder="Old address number")}}
+                {{ form.old_number(class="form-control", placeholder="Old address number (can include directional like 18w, 16s, etc.)")}}
             </fieldset>
-            <fieldset>
+            <fieldset class="directionbox">
+              <!-- Testing adding in a checkbox for direction -->
+              <!-- <div class="directionboxtext">{{ form.direction.label }}</div>
+              <br>
+              
+              {{ form.direction }} -->
+              
+                <!-- Old working directional  that now works with selectfield-->
                 <label for="direction"> </label>
                 {{ form.direction(class="form-control", placeholder="Direction")}}
             </fieldset>
+            <!-- End working directional -->
             <fieldset>
                 <label for="street"> </label>
                 {{ form.street_name(class="form-control", placeholder="Old street name")}}
+            </fieldset>
+            <fieldset>
+              <label for="street_type"></label>
+                {{form.street_type(class="form-control", placeholder="Street Type")}}
             </fieldset>
             <br>
             <div>
@@ -63,15 +75,26 @@
             <h3>Search for the pre 1909 address of a property</h3>
             <fieldset>
                 <label for="new"> </label>
-                {{ newform.new_number(class="form-control", placeholder="New address number")}}
+                {{ newform.new_number(class="form-control", placeholder="New address number (cannot include directional)")}}
             </fieldset>
             <fieldset>
+            <!-- New direction form -->
+            <!-- <div class="directionboxtext">{{ newform.direction.label }}</div>
+              <br>
+              
+              {{ newform.direction }} -->
+
+            <!-- Old direction form that now works.-->
                 <label for="direction"> </label>
                 {{ newform.direction(class="form-control", placeholder="Direction")}}
             </fieldset>
             <fieldset>
                 <label for="street"> </label>
                 {{ newform.street_name(class="form-control", placeholder="New street name")}}
+            </fieldset>
+            <fieldset>
+              <label for="street_type"></label>
+                {{form.street_type(class="form-control", placeholder="Street Type")}}
             </fieldset>
             <br>
             <div>
